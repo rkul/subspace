@@ -55,10 +55,6 @@ func (p Profile) WireGuardConfigPath() string {
 	return fmt.Sprintf("%s/wireguard/clients/%s.conf", datadir, p.ID)
 }
 
-func (p Profile) WireGuardConfigName() string {
-	return "wg0.conf"
-}
-
 type Info struct {
 	Email      string `json:"email"`
 	Password   []byte `json:"password"`
@@ -102,7 +98,7 @@ func NewConfig(filename string) (*Config, error) {
 	// Create new config with defaults
 	if os.IsNotExist(err) {
 		c.Info = &Info{
-			Email: "null",
+			Email:    "null",
 			HashKey:  RandomString(32),
 			BlockKey: RandomString(32),
 		}

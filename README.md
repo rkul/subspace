@@ -127,6 +127,7 @@ $ subspace --http-host subspace.example.com
 | `SUBSPACE_THEME`            | `green`             | The theme to use, please refer to [semantic-ui](https://semantic-ui.com/usage/theming.html) for accepted colors                                      |
 | `SUBSPACE_BACKLINK`         | `/`                 | The page to set the home button to                                                                                                                   |
 | `SUBSPACE_DISABLE_DNS`      | `false`             | Whether to disable DNS so the client uses their own configured DNS server(s). Consider disabling DNS server, if supporting international VPN clients |
+| `SUBSPACE_CONFIG_FILENAME`  | `wg0.conf`          | Client config filename to download                                                                                                                   |
 
 ### Run as a Docker container
 
