@@ -109,7 +109,8 @@ func wireguardConfigHandler(w *Web) {
 		return
 	}
 
-	w.w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%s", getEnv("SUBSPACE_CONFIG_FILENAME", "wg0.conf")))
+	configFilename := getEnv("SUBSPACE_CONFIG_FILENAME", "wg0.conf")
+	w.w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=%s", configFilename))
 	w.w.Header().Set("Content-Type", "application/x-wireguard-profile")
 	w.w.Header().Set("Content-Length", fmt.Sprintf("%d", len(b)))
 	if _, err := w.w.Write(b); err != nil {
